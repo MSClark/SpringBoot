@@ -3,6 +3,6 @@
 <title>Meep</title>
 </head>
 <body>
-Welcome ${title }${name }
+<h1>Welcome ${name } your password is ${password } </h1>
 </body>
 </html>
