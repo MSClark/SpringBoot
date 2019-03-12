@@ -1,5 +1,7 @@
 package com.in28minutes.springboot.web.controller;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -26,5 +28,15 @@ public class TodoController {
 		return "list-todos";
 	}
 	
+	@RequestMapping(value="/add-todo", method = RequestMethod.GET)
+	public String showAddTodoPage(ModelMap model){
+		return "todo";
+	}
+	
+	@RequestMapping(value="/add-todo", method = RequestMethod.POST)
+	public String addTodo(ModelMap model, @RequestParam String desc){
+		service.addTodo((String) model.get("name"), desc, new Date(), false);
+		return "redirect:/list-todos"; //redirect refreshes model
+	}
 	
 }
