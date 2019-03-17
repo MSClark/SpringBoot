@@ -31,8 +31,6 @@
 				</c:forEach>
 			</tbody>
 		</table>
-		<h3>Here is your list of todos ${name }:</h3>
-		${todos }
 		<div><a class="button" href="/add-todo">Add a Todo</a></div>
 	</div>
 	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
