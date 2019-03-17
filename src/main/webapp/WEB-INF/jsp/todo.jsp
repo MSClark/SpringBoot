@@ -11,10 +11,11 @@
 	<div class="container">
 		<form:form method="post" commandName="todo"> <!-- binds todo bean to this jsp -->
 			<fieldset class="form-group">
-				<form:label path="desc">Description: </form:label>
+				<form:label path="desc">Description: </form:label> <!-- path is mapping to obj field -->
 				<form:input path="desc" type="text" class="form-control" required="required"/> 
-				<button type="submit" class="btn btn-success">Submit</button>
+				<form:errors path="desc" cssClass="text-warning"></form:errors> <!-- error message comes from todo.java bean -->
 			</fieldset>
+				<button type="submit" class="btn btn-success">Submit</button>
 		</form:form>
 		<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 	    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
